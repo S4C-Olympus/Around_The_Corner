@@ -894,6 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816485637}
   - component: {fileID: 816485636}
+  - component: {fileID: 816485635}
   m_Layer: 0
   m_Name: Monitor 2 Camera (Display 2)
   m_TagString: Untagged
@@ -901,6 +902,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &816485635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816485634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3299cfd3ee75c6488f32480601444dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1265971403}
+  smoothSpeed: 0.125
+  offset: {x: -0.5, y: 3, z: 0}
+  XMaxEnabled: 0
+  XMaxValue: 0
+  XMinEnabled: 0
+  XMinValue: 0
+  YMaxEnabled: 0
+  YMaxValue: 12.76
+  YMinEnabled: 1
+  YMinValue: -13.4
+  ZMaxEnabled: 1
+  ZMaxValue: 8.8
+  ZMinEnabled: 1
+  ZMinValue: -8.8
 --- !u!20 &816485636
 Camera:
   m_ObjectHideFlags: 0
@@ -2153,6 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654981358}
   - component: {fileID: 1654981357}
+  - component: {fileID: 1654981356}
   m_Layer: 0
   m_Name: Monitor 3 Camera (Display 3)
   m_TagString: Untagged
@@ -2160,6 +2189,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1654981356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654981355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3299cfd3ee75c6488f32480601444dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1290919373}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 3, z: 0.5}
+  XMaxEnabled: 1
+  XMaxValue: 8.8
+  XMinEnabled: 1
+  XMinValue: -8.8
+  YMaxEnabled: 1
+  YMaxValue: 12.76
+  YMinEnabled: 1
+  YMinValue: -13.4
+  ZMaxEnabled: 0
+  ZMaxValue: 0
+  ZMinEnabled: 0
+  ZMinValue: 0
 --- !u!20 &1654981357
 Camera:
   m_ObjectHideFlags: 0
@@ -2227,6 +2283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823299699}
   - component: {fileID: 1823299698}
+  - component: {fileID: 1823299697}
   m_Layer: 0
   m_Name: Monitor 4 Camera (Display 4)
   m_TagString: Untagged
@@ -2234,6 +2291,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1823299697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823299696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3299cfd3ee75c6488f32480601444dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1251988520}
+  smoothSpeed: 0.125
+  offset: {x: 0.5, y: 3, z: 0}
+  XMaxEnabled: 0
+  XMaxValue: 0
+  XMinEnabled: 0
+  XMinValue: 0
+  YMaxEnabled: 1
+  YMaxValue: 12.76
+  YMinEnabled: 1
+  YMinValue: -13.4
+  ZMaxEnabled: 1
+  ZMaxValue: 8.8
+  ZMinEnabled: 1
+  ZMinValue: -8.8
 --- !u!20 &1823299698
 Camera:
   m_ObjectHideFlags: 0
@@ -2418,6 +2502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942293108}
   - component: {fileID: 1942293107}
+  - component: {fileID: 1942293106}
   m_Layer: 0
   m_Name: Monitor 1 Camera (Display 1)
   m_TagString: Untagged
@@ -2425,6 +2510,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1942293106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942293105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3299cfd3ee75c6488f32480601444dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1835190050}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 3, z: -0.5}
+  XMaxEnabled: 1
+  XMaxValue: 8.8
+  XMinEnabled: 1
+  XMinValue: -8.8
+  YMaxEnabled: 1
+  YMaxValue: 12.76
+  YMinEnabled: 1
+  YMinValue: -13.4
+  ZMaxEnabled: 0
+  ZMaxValue: 0
+  ZMinEnabled: 0
+  ZMinValue: 0
 --- !u!20 &1942293107
 Camera:
   m_ObjectHideFlags: 0
