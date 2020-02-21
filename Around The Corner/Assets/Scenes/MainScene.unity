@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 816485637}
   - component: {fileID: 816485636}
   m_Layer: 0
-  m_Name: Display 1 Camera
+  m_Name: Monitor 1 Camera (Display 1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,8 +272,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853011155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.85, y: -16.82, z: -18.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -16.85, y: -16.6, z: -18.4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -295,7 +295,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &853011159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 1251988522}
   - component: {fileID: 1251988521}
   m_Layer: 0
-  m_Name: Player Display 3
+  m_Name: Player Display 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,11 +389,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251988518}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 18.4, y: -16.82, z: -16.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 18.4, y: -16.6, z: -16.85}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1251988521
 MonoBehaviour:
@@ -410,7 +410,7 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   gravity: 20
-  display: 3
+  display: 4
 --- !u!143 &1251988522
 CharacterController:
   m_ObjectHideFlags: 0
@@ -428,7 +428,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1265971401
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +506,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265971401}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -18.4, y: -16.82, z: 16.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -18.4, y: -16.6, z: 16.85}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -545,7 +545,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1290919371
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 1290919375}
   - component: {fileID: 1290919374}
   m_Layer: 0
-  m_Name: Player Display 4
+  m_Name: Player Display 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,11 +623,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290919371}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 16.85, y: -16.82, z: 18.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 16.85, y: -16.6, z: 18.4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1290919374
 MonoBehaviour:
@@ -644,7 +644,7 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   gravity: 20
-  display: 4
+  display: 3
 --- !u!143 &1290919375
 CharacterController:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1527796409
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cff50b72a59bf9949b1639e309097c1c, type: 2}
+  - {fileID: 2100000, guid: da27e938cc33b7f4cbf7a96bdc6d7051, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 1654981358}
   - component: {fileID: 1654981357}
   m_Layer: 0
-  m_Name: Display 4 Camera
+  m_Name: Monitor 4 Camera (Display 4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,13 +960,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654981355}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 8.8, y: -12.76, z: 24}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 24, y: -12.76, z: -8.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1823299696
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 1823299699}
   - component: {fileID: 1823299698}
   m_Layer: 0
-  m_Name: Display 2 Camera
+  m_Name: Monitor 2 Camera (Display 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 1942293108}
   - component: {fileID: 1942293107}
   m_Layer: 0
-  m_Name: Display 3 Camera
+  m_Name: Monitor 3 Camera (Display 3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,10 +1108,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942293105}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 24, y: -12.76, z: -8.8}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 8.8, y: -12.76, z: 24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
