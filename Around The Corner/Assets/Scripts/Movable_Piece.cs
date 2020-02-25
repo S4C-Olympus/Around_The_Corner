@@ -11,11 +11,17 @@ public class Movable_Piece : MonoBehaviour
     private bool isMoving;
 
     private bool extended;
+
+    public float newPosX;
+
+    public float newPosY;
+
+    public float newPosZ;
     // Start is called before the first frame update
     void Start()
     {
         originalPos = transform.position;
-        newPos = originalPos + new Vector3(4, 0, 0);
+        newPos = new Vector3(newPosX, newPosY, newPosZ);
         extended = false;
     }
 
