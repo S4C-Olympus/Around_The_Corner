@@ -8,34 +8,45 @@ public class Movable_Piece : MonoBehaviour
 
     private Vector3 newPos;
 
+    private bool isMoving;
+
     private bool extended;
     // Start is called before the first frame update
     void Start()
     {
         originalPos = transform.position;
-        //newPos = originalPos + new Vector3(4 * Time.deltaTime, 0, 0);
-        newPos = Vector3.Lerp(originalPos, new Vector3(4, 0, 0), 0.5f);
+        newPos = originalPos + new Vector3(4, 0, 0);
         extended = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isMoving && !extended)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime);
+            if (transform.position.Equals(newPos))
+            {
+                extended = true;
+                isMoving = false;
+            }
 
+        }
+        else if (isMoving && extended)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, originalPos, Time.deltaTime);
+            if (transform.position.Equals(originalPos))
+            {
+                extended = false;
+                isMoving = false;
+            }
+        }
     }
 
     public void TriggerMove()
     {
-        if (!extended)
-        {
-            transform.position = newPos;
-            extended = true;
-        }
-        else
-        {
-            transform.position = originalPos;
-            extended = false;
-        }
+        isMoving = true;
+
     }
 
 
