@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 
             if (Input.GetButton("Display " + display + " Jump"))
             {
-                moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"),  1.f, Input.GetAxis("Display " + display + " Vertical"));
+                moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"),  1.0f, Input.GetAxis("Display " + display + " Vertical"));
                 moveDirection *= speed;
             }
         }
