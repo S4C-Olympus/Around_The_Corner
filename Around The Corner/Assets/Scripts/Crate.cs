@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+
+    private bool isPickedUp = false;
+    private GameObject parent; 
     void Update()
     {
+
+        if (isPickedUp)
+        {
+            print("Update with parent pos");
+            transform.position = parent.transform.position;
+        }
         if (Input.GetAxis("Display 2 Vertical") == 1)
         {
             transform.position = transform.position + new Vector3(0, 0, 0.1f);
@@ -73,4 +82,17 @@ public class Crate : MonoBehaviour
     //        }
     //    }
     //}
+
+
+    public void HasBeenPickedUp(GameObject parent)
+    {
+        this.parent = parent;
+        isPickedUp = true;
+    }
+
+    public void HasBeenPutDown()
+    {
+        this.parent = null;
+        isPickedUp = false;
+    }
 }
