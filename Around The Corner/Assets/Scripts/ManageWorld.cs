@@ -9,11 +9,6 @@ public class ManageWorld : MonoBehaviour
 
     public Text display1Timer;
 
-    public Text display2Timer;
-
-    public Text display3Timer;
-
-    public Text display4Timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +21,5 @@ public class ManageWorld : MonoBehaviour
         timer += Time.deltaTime;
 
         display1Timer.text = "Time: " + timer;
-        display2Timer.text = "Time: " + timer;
-        display3Timer.text = "Time: " + timer;
-        display4Timer.text = "Time: " + timer;
     }
 }

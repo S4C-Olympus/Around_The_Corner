@@ -9,6 +9,8 @@ public class Pickup : MonoBehaviour
     private GameObject objectGrabbed;
     public GameObject uiObject;
 
+    public int PlayerID;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if ((PlayerID == 1 && Input.GetKeyDown(KeyCode.F)) || (PlayerID == 2 && Input.GetKeyDown(KeyCode.R)) || (PlayerID == 3 && Input.GetKeyDown(KeyCode.V)) || (PlayerID == 4 && Input.GetKeyDown(KeyCode.Alpha4)))
         {
             uiObject.SetActive(false);
             if (!grabbed && canGrab)

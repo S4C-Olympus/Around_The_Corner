@@ -12,9 +12,13 @@ public class Crate : MonoBehaviour
 
         if (isPickedUp)
         {
-            print("Update with parent pos");
             transform.position = parent.transform.position;
         }
+        else
+        {
+
+
+        }/*
         if (Input.GetAxis("Display 2 Vertical") == 1)
         {
             transform.position = transform.position + new Vector3(0, 0, 0.1f);
@@ -22,7 +26,7 @@ public class Crate : MonoBehaviour
         if (Input.GetAxis("Display 2 Vertical") == -1)
         {
             transform.position = transform.position + new Vector3(0, 0, -0.1f);
-        }
+        }*/
     }
     //private void OnColliderEnter(Collision collision)
     //{
@@ -94,5 +98,6 @@ public class Crate : MonoBehaviour
     {
         this.parent = null;
         isPickedUp = false;
+        transform.position = transform.position - new Vector3(0, 0.8f, 0);
     }
 }

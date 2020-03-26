@@ -7,6 +7,8 @@ public class ButtonCollision : MonoBehaviour
 {
     public Movable_Piece move_platform;
     public int buttonDisplay;
+
+    public int PlayerID;
     private void Start()
     {
         //GetComponent<Collider>();
@@ -25,6 +27,11 @@ public class ButtonCollision : MonoBehaviour
                 move_platform.TriggerMove();
                 Debug.Log("Acive");
             }
+        }
+
+        if ((PlayerID == 1 && Input.GetKeyDown(KeyCode.F)) || (PlayerID == 2 && Input.GetKeyDown(KeyCode.R)) || (PlayerID == 3 && Input.GetKeyDown(KeyCode.V)) || (PlayerID == 4 && Input.GetKeyDown(KeyCode.Alpha4)))
+        {
+            move_platform.TriggerMove();
         }
     }
 }
