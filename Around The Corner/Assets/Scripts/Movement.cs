@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public string display;
+    public Animator anim;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -31,6 +32,34 @@ public class Movement : MonoBehaviour
             {
                 moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"),  1.0f, Input.GetAxis("Display " + display + " Vertical"));
                 moveDirection *= speed;
+
+                //start jumping animation - Kerry
+                anim.SetBool("isJumping", true);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isRunning", false);
+            }
+
+            if (Input.GetAxis("Display " + display + " Horizontal") > 0)
+            {
+                anim.SetBool("isRunning", true);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJumping", false);
+            }
+
+            // check for running left
+            else if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+            {
+                anim.SetBool("isRunning", true);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJumping", false);
+                transform.Rotate(0, -180, 0);
+            }
+
+            else 
+            {
+                anim.SetBool("isIdle", true);
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isJumping", false);
             }
         }
 
