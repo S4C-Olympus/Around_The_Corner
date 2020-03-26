@@ -4064,9 +4064,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.5
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 10
   field of view: 60
@@ -5550,8 +5550,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 10
   field of view: 60
@@ -5563,7 +5563,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 2
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
@@ -19645,10 +19645,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c253ada57ed8b194ab8561506a20324c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display1Timer: {fileID: 0}
-  display2Timer: {fileID: 0}
-  display3Timer: {fileID: 0}
-  display4Timer: {fileID: 0}
+  display1Timer: {fileID: 1931563494}
+  display2Timer: {fileID: 1313709902}
+  display3Timer: {fileID: 1132471075}
+  display4Timer: {fileID: 1817793816}
 --- !u!1 &1044464099
 GameObject:
   m_ObjectHideFlags: 0
@@ -25026,10 +25026,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
-    width: 1
-    height: 1
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 10
   field of view: 60
@@ -25041,7 +25041,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 3
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
@@ -30272,10 +30272,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.5
+    y: 0.5
+    width: 0.5
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 10
   field of view: 60
@@ -30287,7 +30287,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
