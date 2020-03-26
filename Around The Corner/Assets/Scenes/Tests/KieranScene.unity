@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 853011157}
   - component: {fileID: 853011156}
   - component: {fileID: 853011158}
-  - component: {fileID: 853011160}
+  - component: {fileID: 853011159}
   m_Layer: 0
   m_Name: Player Display 1
   m_TagString: Untagged
@@ -568,7 +568,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &853011160
+--- !u!114 &853011159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,9 +577,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 853011155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f4c512307cf7e3489db389d1dd9c9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 29ef04fb064765b42ad07fa1fb92fe0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 6
+  jumpSpeed: 8
+  gravity: 20
+  display: 1
 --- !u!1 &1251988518
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,8 +712,8 @@ GameObject:
   - component: {fileID: 1265971403}
   - component: {fileID: 1265971402}
   - component: {fileID: 1265971405}
-  - component: {fileID: 1265971406}
   - component: {fileID: 1265971404}
+  - component: {fileID: 1265971406}
   m_Layer: 0
   m_Name: Player Display 2
   m_TagString: Untagged
@@ -821,9 +825,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265971401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f4c512307cf7e3489db389d1dd9c9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 29ef04fb064765b42ad07fa1fb92fe0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 6
+  jumpSpeed: 8
+  gravity: 20
+  display: 2
 --- !u!1 &1290919371
 GameObject:
   m_ObjectHideFlags: 0

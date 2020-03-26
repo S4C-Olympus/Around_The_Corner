@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
         {
             // We are grounded, so recalculate
             // move direction directly from axes
-
             moveDirection = new Vector3(Input.GetAxis("Display "+ display +  " Horizontal"), 0.0f, Input.GetAxis("Display " + display + " Vertical"));
             moveDirection *= speed;
 
