@@ -12,7 +12,7 @@ public class Crate : MonoBehaviour
 
         if (isPickedUp)
         {
-            transform.position = parent.transform.position;
+            transform.position = parent.transform.position + new Vector3(0,1.2f,0);
         }
         else
         {

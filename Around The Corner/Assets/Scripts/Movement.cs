@@ -11,56 +11,217 @@ public class Movement : MonoBehaviour
     public float gravity = 20.0f;
     public string display;
     public Animator anim;
+    private bool rotated = true;
+    private int lastAction = 0;
+
+    private bool gameDone = false;
+
+    public int PlayerID;
+
+    private Rigidbody rb;
+
+    public float distanceToGround;
 
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (characterController.isGrounded)
+        if (!gameDone)
         {
-            // We are grounded, so recalculate
-            // move direction directly from axes
-            moveDirection = new Vector3(Input.GetAxis("Display "+ display +  " Horizontal"), 0.0f, Input.GetAxis("Display " + display + " Vertical"));
-            moveDirection *= speed;
 
-            if (Input.GetButton("Display " + display + " Jump"))
+
+            if (IsGrounded())
             {
-                moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"),  1.0f, Input.GetAxis("Display " + display + " Vertical"));
+                Debug.Log("On ground");
+                // We are grounded, so recalculate
+                // move direction directly from axes
+                moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), 0.0f, Input.GetAxis("Display " + display + " Vertical"));
                 moveDirection *= speed;
 
-                //start jumping animation - Kerry
-                anim.SetBool("isJumping", true);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isRunning", false);
+                if (Input.GetButton("Display " + display + " Jump"))
+                {
+                    moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), 1.0f, Input.GetAxis("Display " + display + " Vertical"));
+                    moveDirection *= speed;
+
+                    //start jumping animation - Kerry
+                    anim.SetBool("isJumping", true);
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isRunning", false);
+                }
+
+                if (PlayerID == 1)
+                {
+                    if (Input.GetAxis("Display " + display + " Horizontal") > 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    // check for running left
+                    else if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+
+                    }
+
+                    else
+                    {
+                        anim.SetBool("isIdle", true);
+                        anim.SetBool("isRunning", false);
+                        anim.SetBool("isJumping", false);
+                    }
+                }
+                else if (PlayerID == 2)
+                {
+                    if (Input.GetAxis("Display " + display + " Vertical") < 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    // check for running left
+                    else if (Input.GetAxis("Display " + display + " Vertical") > 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+
+                    }
+
+                    else
+                    {
+                        anim.SetBool("isIdle", true);
+                        anim.SetBool("isRunning", false);
+                        anim.SetBool("isJumping", false);
+                    }
+                }
+                else if (PlayerID == 3)
+                {
+                    if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    // check for running left
+                    else if (Input.GetAxis("Display " + display + " Horizontal") > 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+
+                    }
+
+                    else
+                    {
+                        anim.SetBool("isIdle", true);
+                        anim.SetBool("isRunning", false);
+                        anim.SetBool("isJumping", false);
+                    }
+                }
+                else if (PlayerID == 4)
+                {
+                    if (Input.GetAxis("Display " + display + " Vertical") > 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    // check for running left
+                    else if (Input.GetAxis("Display " + display + " Vertical") < 0)
+                    {
+                        anim.SetBool("isRunning", true);
+                        anim.SetBool("isIdle", false);
+                        anim.SetBool("isJumping", false);
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+
+                    }
+
+                    else
+                    {
+                        anim.SetBool("isIdle", true);
+                        anim.SetBool("isRunning", false);
+                        anim.SetBool("isJumping", false);
+                    }
+                }
+            }
+            else
+            {
+                if(PlayerID == 1)
+                {
+                    Debug.Log("Entered air " + PlayerID);
+                }
+
+                moveDirection += new Vector3(Input.GetAxis("Display " + display + " Horizontal") / 10, 0.0f, Input.GetAxis("Display " + display + " Vertical") / 10);
             }
 
-            if (Input.GetAxis("Display " + display + " Horizontal") > 0)
-            {
-                anim.SetBool("isRunning", true);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJumping", false);
-            }
-
-            // check for running left
-            else if (Input.GetAxis("Display " + display + " Horizontal") < 0)
-            {
-                anim.SetBool("isRunning", true);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJumping", false);
-                transform.Rotate(0, -180, 0);
-            }
-
-            else 
-            {
-                anim.SetBool("isIdle", true);
-                anim.SetBool("isRunning", false);
-                anim.SetBool("isJumping", false);
-            }
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -70,5 +231,15 @@ public class Movement : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void endGame()
+    {
+        gameDone = true;
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, distanceToGround);
     }
 }

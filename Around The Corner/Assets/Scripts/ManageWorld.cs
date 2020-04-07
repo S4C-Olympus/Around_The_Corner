@@ -9,6 +9,10 @@ public class ManageWorld : MonoBehaviour
 
     public Text display1Timer;
 
+    public Text displayFinalTime;
+
+    public bool gameEnd = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +22,20 @@ public class ManageWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (!gameEnd)
+        {
+            timer += Time.deltaTime;
 
-        display1Timer.text = "Time: " + timer;
+            display1Timer.text = "Time: " + timer;
+        }
+        else
+        {
+            displayFinalTime.text = "Level Finished! Your final time was " + timer;
+        }
+    }
+
+    public void endGame()
+    {
+        gameEnd = true;
     }
 }

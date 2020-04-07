@@ -8,6 +8,8 @@ public class ButtonCollision : MonoBehaviour
     public Movable_Piece move_platform;
     public int buttonDisplay;
 
+    public GameObject text;
+
     public int PlayerID;
     private void Start()
     {
@@ -33,5 +35,15 @@ public class ButtonCollision : MonoBehaviour
         {
             move_platform.TriggerMove();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        text.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        text.SetActive(false);
     }
 }
