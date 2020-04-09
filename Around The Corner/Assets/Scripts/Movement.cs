@@ -48,11 +48,6 @@ public class Movement : MonoBehaviour
                 {
                     moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), 1.0f, Input.GetAxis("Display " + display + " Vertical"));
                     moveDirection *= speed;
-
-                    //start jumping animation - Kerry
-                    anim.SetBool("isJumping", true);
-                    anim.SetBool("isIdle", false);
-                    anim.SetBool("isRunning", false);
                 }
 
                 if (PlayerID == 1)
@@ -222,6 +217,41 @@ public class Movement : MonoBehaviour
                 moveDirection += new Vector3(Input.GetAxis("Display " + display + " Horizontal") / 10, 0.0f, Input.GetAxis("Display " + display + " Vertical") / 10);
             }
 
+            // the !isGrounded section below controls the flow of character animations while jumping
+
+            if (!IsGrounded())
+            {
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isJumping", true);
+                rotated = false;
+
+                if (PlayerID == 1)
+                {
+                    if (Input.GetAxis("Display " + display + " Horizontal") > 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    else if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+                    }
+                }
+            }
+
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -242,4 +272,5 @@ public class Movement : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround);
     }
+
 }
