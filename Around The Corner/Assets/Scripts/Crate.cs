@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
 
-    private bool isPickedUp = false;
+    public bool isPickedUp = false;
     private GameObject parent; 
     void Update()
     {

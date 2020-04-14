@@ -43,6 +43,14 @@ public class Pickup : MonoBehaviour
             canGrab = true;
             objectGrabbed = other.gameObject;
             uiObject.SetActive(true);
+        }else if (other.tag.Equals("Transfer"))
+        {
+            if (grabbed)
+            {
+                grabbed = false;
+                objectGrabbed.GetComponent<Crate>().HasBeenPutDown();
+            }
+
         }
     }
 

@@ -38,7 +38,6 @@ public class Movement : MonoBehaviour
 
             if (IsGrounded())
             {
-                Debug.Log("On ground");
                 // We are grounded, so recalculate
                 // move direction directly from axes
                 moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), 0.0f, Input.GetAxis("Display " + display + " Vertical"));
@@ -209,12 +208,12 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                if(PlayerID == 1)
+                if(PlayerID == 5)
                 {
                     Debug.Log("Entered air " + PlayerID);
                 }
 
-                moveDirection += new Vector3(Input.GetAxis("Display " + display + " Horizontal") / 10, 0.0f, Input.GetAxis("Display " + display + " Vertical") / 10);
+                moveDirection += new Vector3(Input.GetAxis("Display " + display + " Horizontal") / 15, -0.001f, Input.GetAxis("Display " + display + " Vertical") / 15);
             }
 
             // the !isGrounded section below controls the flow of character animations while jumping
