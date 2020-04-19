@@ -220,13 +220,13 @@ public class Movement : MonoBehaviour
 
             if (!IsGrounded())
             {
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isRunning", false);
-                anim.SetBool("isJumping", true);
-                rotated = false;
-
                 if (PlayerID == 1)
                 {
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isRunning", false);
+                    anim.SetBool("isJumping", true);
+                    rotated = false;
+
                     if (Input.GetAxis("Display " + display + " Horizontal") > 0)
                     {
                         rotated = false;
@@ -239,6 +239,99 @@ public class Movement : MonoBehaviour
                     }
 
                     else if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+                    }
+                }
+
+                if (PlayerID == 2)
+                {
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isRunning", false);
+                    anim.SetBool("isJumping", true);
+                    rotated = false;
+
+                    if (Input.GetAxis("Display " + display + " Vertical") < 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    else if (Input.GetAxis("Display " + display + " Vertical") > 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+                    }
+                }
+
+                else if (PlayerID == 3)
+                {
+
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isRunning", false);
+                    anim.SetBool("isJumping", true);
+                    rotated = false;
+
+                    if (Input.GetAxis("Display " + display + " Horizontal") < 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    else if (Input.GetAxis("Display " + display + " Horizontal") > 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 0)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 1;
+                        }
+                    }
+                }
+
+
+                else if (PlayerID == 4)
+                {
+
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isRunning", false);
+                    anim.SetBool("isJumping", true);
+                    rotated = false;
+
+                    if (Input.GetAxis("Display " + display + " Vertical") > 0)
+                    {
+                        rotated = false;
+                        if (!rotated && lastAction == 1)
+                        {
+                            transform.Rotate(0, -180, 0);
+                            rotated = true;
+                            lastAction = 0;
+                        }
+                    }
+
+                    else if (Input.GetAxis("Display " + display + " Vertical") < 0)
                     {
                         rotated = false;
                         if (!rotated && lastAction == 0)
