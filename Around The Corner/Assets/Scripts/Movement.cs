@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
+    public float jumpHeight = 1.0f;
     public float gravity = 20.0f;
     public string display;
     public Animator anim;
@@ -45,8 +46,8 @@ public class Movement : MonoBehaviour
 
                 if (Input.GetButton("Display " + display + " Jump"))
                 {
-                    moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), 1.0f, Input.GetAxis("Display " + display + " Vertical"));
-                    moveDirection *= speed;
+                    moveDirection = new Vector3(Input.GetAxis("Display " + display + " Horizontal"), jumpHeight, Input.GetAxis("Display " + display + " Vertical"));
+                    moveDirection *= jumpSpeed;
                 }
 
                 if (PlayerID == 1)
