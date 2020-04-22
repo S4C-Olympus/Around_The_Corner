@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Crate
   - Transfer
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -29,4 +29,12 @@ public class Drain : MonoBehaviour
             ObjectChange.GetComponent<Movable_Piece>().TriggerMove();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Crate"))
+        {
+            ObjectChange.GetComponent<Movable_Piece>().TriggerMove();
+        }
+    }
 }

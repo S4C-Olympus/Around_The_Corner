@@ -20,7 +20,17 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision with door");
         if (collision.collider.tag.Equals("Key"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision with door");
+        if (other.tag.Equals("Key"))
         {
             Destroy(gameObject);
         }

@@ -26,7 +26,7 @@ public class Transfer : MonoBehaviour
                 
                 while (transferObject.transform.position != new Vector3(-20.5f, -18.5f, -15.5f))
                 {
-                    Debug.Log("Need to move");
+                    Debug.Log("Need to move with transfer 1" + transferObject.transform.position.ToString());
                     transferObject.transform.position = new Vector3(-20.5f, -18.5f, -15.5f);
                 }
                 if (!transferObject.GetComponent<Crate>().isPickedUp)
@@ -35,21 +35,109 @@ public class Transfer : MonoBehaviour
                     transferItem = false;
                 }
 
+            }else if(transferID == 2)
+            {
+                while (transferObject.transform.position != new Vector3(-16.5f, -18.5f, -20.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(-16.5f, -18.5f, -20.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 3)
+            {
+                while (transferObject.transform.position != new Vector3(-16.5f, -18.5f, 20.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(-16.5f, -18.5f, 20.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 4)
+            {
+                while (transferObject.transform.position != new Vector3(-20.5f, -18.5f, -16.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(-20.5f, -18.5f, -16.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 5)
+            {
+                while (transferObject.transform.position != new Vector3(20.5f, -18.5f, 16.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(20.5f, -18.5f, 16.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 6)
+            {
+                while (transferObject.transform.position != new Vector3(16.5f, -18.5f, 20.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(16.5f, -18.5f, 20.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 7)
+            {
+                while (transferObject.transform.position != new Vector3(16.5f, -18.5f, -20.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(16.5f, -18.5f, -20.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
+            }
+            else if (transferID == 8)
+            {
+                while (transferObject.transform.position != new Vector3(20.5f, -18.5f, -16.5f))
+                {
+                    Debug.Log("Need to move with transfer 2");
+                    transferObject.transform.position = new Vector3(20.5f, -18.5f, -16.5f);
+                }
+                if (!transferObject.GetComponent<Crate>().isPickedUp)
+                {
+                    transferObject = null;
+                    transferItem = false;
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(transferID == 1)
-        {
+
             if (other.tag.Equals("Crate"))
             {
                 Debug.Log("Transfer crate");
                 transferObject = other.gameObject;
                 transferItem = true;
             }
-        }
 
     }
 }

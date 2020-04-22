@@ -11,9 +11,12 @@ public class Pickup : MonoBehaviour
 
     public int PlayerID;
 
+    private bool hasKey;
+
     // Start is called before the first frame update
     void Start()
     {
+        hasKey = false;
         uiObject.SetActive(false);
     }
 
@@ -37,12 +40,12 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Enter");
-        if (other.tag.Equals("Crate"))
+        if (other.tag.Equals("Crate") || other.tag.Equals("Key"))
         {
             canGrab = true;
             objectGrabbed = other.gameObject;
             uiObject.SetActive(true);
+            hasKey = true;
         }else if (other.tag.Equals("Transfer"))
         {
             if (grabbed)
@@ -51,16 +54,23 @@ public class Pickup : MonoBehaviour
                 objectGrabbed.GetComponent<Crate>().HasBeenPutDown();
             }
 
+        }else if (other.tag.Equals("Door"))
+        {
+            if (hasKey)
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Crate"))
+        if (other.tag.Equals("Crate") || other.tag.Equals("Key"))
         {
             canGrab = false;
             objectGrabbed = null;
             uiObject.SetActive(false);
+            hasKey = false;
         }
     }
 }
