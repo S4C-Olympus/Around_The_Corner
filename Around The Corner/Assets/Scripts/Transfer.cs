@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Transfer : MonoBehaviour
 {
@@ -10,15 +11,18 @@ public class Transfer : MonoBehaviour
 
     GameObject transferObject;
 
+    public GameObject uiObject;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (transferItem)
         {
             if(transferID == 1)
@@ -137,7 +141,18 @@ public class Transfer : MonoBehaviour
                 Debug.Log("Transfer crate");
                 transferObject = other.gameObject;
                 transferItem = true;
+            }else if (other.tag.Equals("Player"))
+            {
+                uiObject.SetActive(true);
             }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            uiObject.SetActive(false);
+        }
     }
 }

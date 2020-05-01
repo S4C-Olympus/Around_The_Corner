@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ButtonFinal : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ButtonFinal : MonoBehaviour
     public GameObject movementController4;
 
     public GameObject controllerWorld;
+
+    public UnityEvent buttonPress;
 
     public GameObject text;
     // Start is called before the first frame update
@@ -28,6 +31,7 @@ public class ButtonFinal : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            buttonPress.Invoke();
             Debug.Log("Level end");
             movementController1.GetComponent<Movement>().endGame();
             movementController2.GetComponent<Movement>().endGame();

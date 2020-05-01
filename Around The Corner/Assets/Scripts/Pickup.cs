@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pickup : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Pickup : MonoBehaviour
     private bool canGrab = false;
     private GameObject objectGrabbed;
     public GameObject uiObject;
+
+    public UnityEvent pickupEvent;
 
     public int PlayerID;
 
@@ -25,13 +28,16 @@ public class Pickup : MonoBehaviour
     {
         if ((PlayerID == 1 && Input.GetKeyDown(KeyCode.F)) || (PlayerID == 2 && Input.GetKeyDown(KeyCode.R)) || (PlayerID == 3 && Input.GetKeyDown(KeyCode.V)) || (PlayerID == 4 && Input.GetKeyDown(KeyCode.Alpha4)))
         {
-            uiObject.SetActive(false);
             if (!grabbed && canGrab)
             {
+                uiObject.SetActive(false);
+                pickupEvent.Invoke();
                 objectGrabbed.GetComponent<Crate>().HasBeenPickedUp(this.gameObject);
                 grabbed = true;
             }else if (grabbed)
             {
+                uiObject.SetActive(false);
+                pickupEvent.Invoke();
                 objectGrabbed.GetComponent<Crate>().HasBeenPutDown();
                 grabbed = false;
             }

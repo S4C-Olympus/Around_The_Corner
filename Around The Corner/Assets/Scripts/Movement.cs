@@ -36,7 +36,6 @@ public class Movement : MonoBehaviour
         if (!gameDone)
         {
 
-
             if (IsGrounded())
             {
                 // We are grounded, so recalculate
@@ -209,12 +208,14 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                if(PlayerID == 5)
-                {
-                    Debug.Log("Entered air " + PlayerID);
-                }
 
                 moveDirection += new Vector3(Input.GetAxis("Display " + display + " Horizontal") / 15, -0.001f, Input.GetAxis("Display " + display + " Vertical") / 15);
+
+                if (PlayerID == 4)
+                {
+                    Debug.Log("Pos: " + moveDirection.x + " " + moveDirection.y + " " + moveDirection.z);
+                }
+
             }
 
             // the !isGrounded section below controls the flow of character animations while jumping

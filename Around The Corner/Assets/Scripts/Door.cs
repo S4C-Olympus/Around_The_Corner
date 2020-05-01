@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-
+    UnityEvent unlockEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log("Collision with door");
         if (other.tag.Equals("Key"))
         {
+            unlockEvent.Invoke();
             Destroy(gameObject);
         }
     }
